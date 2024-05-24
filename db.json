@@ -1,0 +1,72 @@
+{
+  "jobs": [
+    {
+      "id": "1",
+      "position": "Product Manager",
+      "company": "Google",
+      "location": "New York",
+      "salary": "100000",
+      "status": "Mülakat",
+      "type": "Yarı Zamanlı",
+      "date": "05.25.2019"
+    },
+    {
+      "id": "2",
+      "position": "Software Engineer",
+      "company": "Microsoft",
+      "location": "Seattle",
+      "salary": "120000",
+      "status": "Reddedildi",
+      "type": "Staj",
+      "date": "05.15.2020"
+    },
+    {
+      "id": "4",
+      "position": "UX Designer",
+      "company": "Apple",
+      "location": "Cupertino",
+      "salary": "110000",
+      "status": "Devam Ediyor",
+      "type": "Uzaktan",
+      "date": "4.30.2023"
+    },
+    {
+      "id": "5",
+      "position": "Marketing Specialist",
+      "company": "Facebook",
+      "location": "Menlo Park",
+      "salary": "95000",
+      "status": "Mülakat",
+      "type": "Yarı Zamanlı",
+      "date": "05.28.2024"
+    },
+    {
+      "id": "6",
+      "position": "Business Development Manager",
+      "company": "Tesla",
+      "location": "Palo Alto",
+      "salary": "130000",
+      "status": "Reddedildi",
+      "type": "Tam Zamanlı",
+      "date": "05.30.2013"
+    },
+    {
+      "id": "cc381289-dcbf-4922-82df-00c6e63637ac",
+      "position": "new",
+      "company": "new",
+      "location": "new",
+      "status": "Mülakat",
+      "type": "Uzaktan",
+      "date": "11.29.2024"
+    },
+    {
+      "id": "6fb2bc34-46ef-4d0e-8c8c-b46a2346744f",
+      "position": "Marketing Specialist",
+      "company": "Facebook",
+      "location": "New York",
+      "status": "Mülakat",
+      "type": "Tam Zamanlı",
+      "date": "24.05.2024"
+    }
+  ]
+}

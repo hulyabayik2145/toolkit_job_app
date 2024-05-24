@@ -1,0 +1,311 @@
+.wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  --cell-size: 52px;
+  --cell-spacing: 1px;
+  --cells: 3;
+  --total-size: calc(
+    var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing))
+  );
+  display: flex;
+  flex-wrap: wrap;
+  width: var(--total-size);
+  height: var(--total-size);
+}
+
+.cell {
+  flex: 0 0 var(--cell-size);
+  margin: var(--cell-spacing);
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 4px;
+  animation: 1.5s ripple ease infinite;
+}
+
+.cell.d-1 {
+  animation-delay: 100ms;
+}
+
+.cell.d-2 {
+  animation-delay: 200ms;
+}
+
+.cell.d-3 {
+  animation-delay: 300ms;
+}
+
+.cell.d-4 {
+  animation-delay: 400ms;
+}
+
+.cell:nth-child(1) {
+  --cell-color: #00ff87;
+}
+
+.cell:nth-child(2) {
+  --cell-color: #0cfd95;
+}
+
+.cell:nth-child(3) {
+  --cell-color: #17fba2;
+}
+
+.cell:nth-child(4) {
+  --cell-color: #23f9b2;
+}
+
+.cell:nth-child(5) {
+  --cell-color: #30f7c3;
+}
+
+.cell:nth-child(6) {
+  --cell-color: #3df5d4;
+}
+
+.cell:nth-child(7) {
+  --cell-color: #45f4de;
+}
+
+.cell:nth-child(8) {
+  --cell-color: #53f1f0;
+}
+
+.cell:nth-child(9) {
+  --cell-color: #60efff;
+}
+
+/*Animation*/
+@keyframes ripple {
+  0% {
+    background-color: transparent;
+  }
+
+  30% {
+    background-color: var(--cell-color);
+  }
+
+  60% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+.btn {
+  --color: #00a97f;
+  --color2: rgb(10, 25, 30);
+  padding: 0.8em 1.75em;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 0.3px solid var(--color);
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 300;
+  font-size: 17px;
+  font-family: "Roboto", "Segoe UI", sans-serif;
+  text-transform: uppercase;
+  color: var(--color);
+}
+
+.btn::after,
+.btn::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: 0.5s ease-out;
+  background-color: var(--color);
+}
+
+.btn::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+
+.btn:hover {
+  color: var(--color2);
+}
+
+.btn:active {
+  filter: brightness(0.7);
+  transform: scale(0.98);
+}
+
+// sil btn css
+
+.bin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: black;
+  cursor: pointer;
+  border: 1px solid white;
+  transition-duration: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.bin-bottom {
+  width: 13px;
+  z-index: 2;
+}
+.bin-top {
+  width: 14px;
+  transform-origin: right;
+  transition-duration: 0.3s;
+  z-index: 2;
+}
+.bin-button:hover .bin-top {
+  transform: rotate(45deg);
+}
+.bin-button:hover {
+  background-color: rgb(255, 0, 0);
+}
+.bin-button:active {
+  transform: scale(0.9);
+}
+.garbage {
+  position: absolute;
+  width: 14px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.bin-button:hover .garbage {
+  animation: throw 0.4s linear;
+}
+@keyframes throw {
+  from {
+    transform: translate(-400%, -700%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
+
+//! özel button
+
+#special-button,
+#special-button *,
+#special-button :after,
+#special-button :before,
+#special-button:after,
+#special-button:before {
+  border: 0 solid rgb(220, 201, 223);
+  box-sizing: border-box;
+}
+
+#special-button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+
+#special-button:disabled {
+  cursor: default;
+}
+
+#special-button:-moz-focusring {
+  outline: auto;
+}
+
+#special-button svg {
+  display: block;
+  vertical-align: middle;
+}
+
+#special-button [hidden] {
+  display: none;
+}
+
+#special-button {
+  border-radius: 90rem;
+  border-width: 1px;
+  overflow: hidden;
+  padding: 0.8rem 3rem;
+  position: relative;
+}
+
+#special-button span {
+  mix-blend-mode: difference;
+}
+
+#special-button:after,
+#special-button:before {
+  background: linear-gradient(
+    90deg,
+    #fff 25%,
+    transparent 0,
+    transparent 50%,
+    #fff 0,
+    #fff 75%,
+    transparent 0
+  );
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: translateY(var(--progress, 100%));
+  transition: transform 0.2s ease;
+}
+
+#special-button:after {
+  --progress: -100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 25%,
+    #fff 0,
+    #fff 50%,
+    transparent 0,
+    transparent 75%,
+    #fff 0
+  );
+  z-index: -1;
+}
+
+#special-button:hover:after,
+#special-button:hover:before {
+  --progress: 0;
+}
