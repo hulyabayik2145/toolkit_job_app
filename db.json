@@ -41,16 +41,6 @@
       "date": "05.28.2024"
     },
     {
-      "id": "6",
-      "position": "Business Development Manager",
-      "company": "Tesla",
-      "location": "Palo Alto",
-      "salary": "130000",
-      "status": "Reddedildi",
-      "type": "Tam Zamanlı",
-      "date": "05.30.2013"
-    },
-    {
       "id": "cc381289-dcbf-4922-82df-00c6e63637ac",
       "position": "new",
       "company": "new",
@@ -67,6 +57,15 @@
       "status": "Mülakat",
       "type": "Tam Zamanlı",
       "date": "24.05.2024"
+    },
+    {
+      "id": "d85e64f6-b467-4b41-9dd9-a27f60a1dd59",
+      "position": "yazılım geliştirici",
+      "company": "waaynet",
+      "location": "turgutlu",
+      "status": "Devam Ediyor",
+      "type": "Tam Zamanlı",
+      "date": "24.06.2024"
     }
   ]
 }

@@ -63,13 +63,17 @@ const JobSlice = createSlice({
                 default:
                     break;
             }
-        }
+
+        },
+        clearFilters: (state, action) => {
+            state.jobs = state.mainJobs;
+        },
 
 
     },
 });
 //actionları export et
-export const { setError, setJobs, setLoading, deleteJob, createJob, filterBySearch, sortJobs } = JobSlice.actions;
+export const { setError, setJobs, setLoading, deleteJob, createJob, filterBySearch, sortJobs, clearFilters } = JobSlice.actions;
 
 //reducer ı export et
 export default JobSlice.reducer;

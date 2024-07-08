@@ -1,15 +1,21 @@
 import { sortOptions, statusOptions, typeOptions } from "./../constants/index";
-import { filterBySearch, sortJobs } from "../redux/slices/jobSlice";
+import {
+  clearFilters,
+  filterBySearch,
+  sortJobs,
+} from "../redux/slices/jobSlice";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { useDebounce } from "@uidotdev/usehooks";
+
 const Filter = () => {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
   // 2. YOL
   const debouncedText = useDebounce(text, 500);
+  console.log(debouncedText);
 
-  // her tuş vurusunda filtreleme tapmak düşük donanımlı cihazlarda kasmalara ve donmalara sebep olabileceğinde filtreleme işlemini kullanıcı yazma işini bıraktığpı anda yapmalıyız bu işleme Debounce denir. ardışık olarak gerçekleşen fonksiyon çağırma işlemlerinde fonksiyonun kısa bir zaman aralığında çağrıldırğında görmezden gelir.
+  // her tuş vurusunda filtreleme yapmak düşük donanımlı cihazlarda kasmalara ve donmalara sebep olabileceğinde filtreleme işlemini kullanıcı yazma işini bıraktığpı anda yapmalıyız bu işleme Debounce denir. ardışık olarak gerçekleşen fonksiyon çağırma işlemlerinde fonksiyonun kısa bir zaman aralığında çağrıldırğında görmezden gelir.
 
   useEffect(() => {
     // bir sayaç başlat ve işlemi  sayaç durduğunda yap
@@ -78,7 +84,12 @@ const Filter = () => {
           </select>
         </div>
         <div>
-          <button type="reset" className="btn-12" id="special-button">
+          <button
+            onClick={() => dispatch(clearFilters())}
+            type="reset"
+            className="btn-12"
+            id="special-button"
+          >
             <span>Filtreyi Sıfırla</span>
           </button>
         </div>
